@@ -10,6 +10,9 @@ class User(db.model):
     polls = db.relationship('Poll', backref='user', order_by="Poll.created_at")
     votes  =db.relationship('Vote', backref='user')
 
+    # def __init__(self, username, password):
+
+
 class Poll(db.Model):
     __tablename__ = 'polls'
     id = db.Column(db.Integer, primary_key=True)
